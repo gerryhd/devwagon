@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from qforum import views
 
 urlpatterns = [
-    url(r'^$', include('qforum.urls')),
+    url(r'^', include('qforum.urls')),
     url(r'^admin/', admin.site.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
