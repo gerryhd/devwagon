@@ -10,7 +10,7 @@ class Post(models.Model):
     tags = models.ManyToManyField
     interest = models.PositiveIntegerField
     views = models.PositiveIntegerField
-    
+
 
     def __str__(self):
         return self.name
