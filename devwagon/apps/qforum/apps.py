@@ -5,4 +5,4 @@ from django.apps import AppConfig
 
 
 class QforumConfig(AppConfig):
-    name = 'qforum'
+    name = 'devwagon.apps.qforum'

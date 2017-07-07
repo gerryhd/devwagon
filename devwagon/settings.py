@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'qforum',
+    'devwagon.apps.qforum',
     'foundation_formtags'
 ]
 

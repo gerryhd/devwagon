@@ -1,5 +1,6 @@
 from django.conf.urls import url
-from qforum import views
+
+from devwagon.apps.qforum import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
