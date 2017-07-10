@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevWagon</title>
+    <link rel="stylesheet" href="{% static 'css/foundation.css' %}">
+  </head>
+  <body>
+    <div class="grid-container">
+  	  <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+          <h1>Dev Wagon Blog (R)</h1>
+        </div>
+      </div>
+  	  <hr />
+      <div class="grid-x grid-padding-x">
+        <div class="large-offset-1"></div>
+        <div class="large-10 medium-10 small-12 cell">
+          {% for entry in blog_entries %}
+          <div class="callout">
+            <h5>{{ entry.title }}
+              <span style="border: solid .5px royalblue"><small>{{ entry.user.username }}</small></span>
+            </h5>
+            <p>{{ entry.content }}</p>
+          </div>
+          <hr />
+          {% endfor %}
+        </div>
+        <div class="grid-x grid-padding-x">
+          <div class="large-2 small-1"></div>
+          <div class="large-8 small-8 cell">
+            <label>Title</label>
+            <input type="text" placeholder="Why do people still use php?" />
+          </div>
+          <div class="large-12 small-12"></div>
+          <div class="large-2 small-offset-0"></div>
+          <div class="large-8 small-8 cell">
+            <label>Content</label>
+            <textarea rows="4" cols="85" style="resize: none" placeholder="They could use something like idk, Python? Even JS, w/e"></textarea>
+          </div>
+          <div class="large-1 small-1 cell">
+            <a href="#" class="button">Post</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'js/vendor/jquery.js' %}"></script>
+    <script src="{% static 'js/vendor/what-input.js' %}"></script>
+    <script src="{% static 'js/vendor/foundation.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+  </body>
+</html>

@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.db import models
 
 class Tag(models.Model):
+    name = models.CharField(max_length=50)
     views = models.PositiveIntegerField()
 
 
@@ -13,8 +14,8 @@ class Post(models.Model):
     title = models.CharField(max_length=120)
     content = models.TextField()
     tags = models.ManyToManyField(Tag)
-    votes = models.PositiveIntegerField
-    views = models.PositiveIntegerField
+    votes = models.PositiveIntegerField()
+    views = models.PositiveIntegerField()
     date = models.DateField(auto_now_add=True)
 
     def __str__(self):
@@ -29,7 +30,7 @@ class Comment(models.Model):
     content = models.TextField()
     date = models.DateField(auto_now_add=True)
     votes = models.PositiveIntegerField()
-    parent = models.ForeignKey('self')
+    parent = models.ForeignKey('self', models.CASCADE)
 
     def __str__(self):
         return self.user + ": " + self.content
